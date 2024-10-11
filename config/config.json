@@ -1,0 +1,141 @@
+{
+/*
+#####################################################################################################################
+#                                         ServerSync Main Config Options                                            #
+#####################################################################################################################
+*/
+	"main": {
+		// Enable Debug output to the console window
+		"showConsoleOutput": false,
+			
+		// Enable Weather Syncing between all Players? Options: true or false
+		"enableWeatherSync": true,
+
+		// Enable Time Syncing between all Players? Options: true or false
+		"enableTimeSync": true,
+
+		// Enable Dynamic Wind Speed Syncing between all players? Options: true or false
+		// Note: Disabling this option will turn all wind effects in your server OFF (i.e. no wind movement at all).
+		"enableWindSync": true,
+
+		// Traffic / Crowd density modules.
+		"enableTrafficDensity": true,
+		"enableCrowdDensity": true,
+
+		// Vehicle syncing between players. If you use another resource, disable these.
+		"enableTurnSignalSync": true,
+		"enableDoorWindowSync": true,
+
+		// Extra options if you don't already have these in other resources
+		"enablePoliceIgnorePlayer": true,
+		"enableNoWantedLevel": true,
+		"enableEveryoneIgnoresPlayer": true,
+		"enableRandomCopSpawn": false, // This will set SetCreateRandomCopsNotOnScenarios and SetCreateRandomCops to what you picked.
+		"enableRandomBoatSpawn": true,
+		"enableGarbageTruckSpawn": true
+	},
+/*
+#####################################################################################################################
+#                               ServerSync DAY/NIGHT TIME Speed Options                                             #
+#####################################################################################################################	
+*/
+	"time": {
+		// Lower than 1 = Longer, Higher than 1 = faster.  0.25 would be 4x slower than GTA time. 2.0 would be half as long as default GTA
+		"nightTimeSpeedMultiplier": 1.0,
+		"dayTimeSpeedMultiplier": 1.0
+	},
+/*
+#####################################################################################################################
+#                                           ServerSync WEATHER Options                                              #
+#####################################################################################################################	
+*/
+	"weather": {
+		// Enable dynamic (changing) weather for the players? Options: true or false
+		"enableDynamicWeather": true,
+
+		// Default weather type for when the resource starts
+		// Options: EXTRASUNNY, CLEAR, NEUTRAL, SMOG, FOGGY, OVERCAST, CLOUDS, CLEARING,
+		// Options: RAIN, THUNDER, SNOW, BLIZZARD, SNOWLIGHT, XMAS, HALLOWEEN
+		"defaultWeather": "EXTRASUNNY",
+
+		// Weather timer (in minutes) between dynamic weather changes. Default: 10 minutes
+		"weatherTimer": 15,
+
+		// Reduce the chance that the weather will change to rain. Default is false because rain can be annoying.
+		"reduceRainChance": true,
+
+		// Weather timeout for rain (in minutes). This means it can only rain once every X minutes. Default: 60 minutes
+		"rainTimeout": 45,
+
+		/*
+			Weather transitions are configured here, pay attention to the example.
+			Example: "CurrentWeather": ["Next Possible Weather 1", "Next Possible Weather 2"]
+			Note: The default config only uses fairly 'clear' weather options to avoid foggy environment effects.
+		*/
+
+		"transitions": {
+			"EXTRASUNNY": ["CLEAR", "SMOG"],
+			"SMOG": ["CLEAR", "CLEARING", "OVERCAST", "CLOUDS", "EXTRASUNNY"],
+			"CLEAR": ["CLOUDS", "EXTRASUNNY", "CLEARING", "SMOG", "OVERCAST"],
+			"CLOUDS": ["CLEAR", "SMOG", "CLEARING", "OVERCAST"],
+			"OVERCAST": ["CLEAR", "CLOUDS", "SMOG", "CLEARING", "THUNDER"],
+			"RAIN": ["CLEAR", "OVERCAST", "CLOUDS", "CLEARING"],
+			"THUNDER": ["OVERCAST"],
+			"CLEARING": ["CLEAR", "CLOUDS", "OVERCAST", "SMOG"],
+			"SNOW": ["SNOW", "SNOWLIGHT"],
+			"SNOWLIGHT": ["SNOW", "SNOWLIGHT"],
+			"BLIZZARD": ["BLIZZARD"],
+			"XMAS": ["XMAS"],
+			"HALLOWEEN": ["HALLOWEEN"]
+		}
+	},
+
+/*
+#####################################################################################################################
+#                                            ServerSync WIND Options                                                #
+#####################################################################################################################
+*/
+	"wind": {
+		// Wind Speed maximum. Default: 10.00
+		"windSpeedMax": 10,
+
+	/*
+		Effectiveness of Current Weather Wind Speed. 
+		Default for EXTRASUNNY is 0.5. This means that the max wind speed above is multiplied by 0.5 to get 1.0 wind speed
+	*/
+		"windSpeedMultipliers": {
+			"EXTRASUNNY": 0.2,
+			"SMOG": 0.1,
+			"CLEAR": 0.3,
+			"CLOUDS": 0.1,
+			"OVERCAST": 0.7,
+			"RAIN": 0.9,
+			"THUNDER": 1.0,
+			"CLEARING": 0.7,
+			"SNOW": 0.6,
+			"SNOWLIGHT": 0.4,
+			"BLIZZARD": 0.8,
+			"XMAS": 0.4,
+			"HALLOWEEN": 0.8
+		}
+	},
+/*
+#####################################################################################################################
+#                                       ServerSync TRAFFIC / CROWD Options                                          #
+#####################################################################################################################
+*/
+	"traffic": {
+		// Maximum traffic density for all players. Default is 0.9999
+		"trafficMaxDensity": 0.9999,
+
+		// Enable scaling density by players. (more players = less ai traffic, with absolute minimum setting of 0.5)
+		"enableTrafficScaling": true
+	},
+	"crowd": {
+		// Maximum crowd density for all players. Default is 0.9999
+		"crowdMaxDensity": 0.9999,
+
+		// Enable scaling density by players. (More Players = Less AI Pedestrians, with a absolute minimum setting of 0.5)
+		"enableCrowdScaling": true
+	}
+}

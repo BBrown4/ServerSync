@@ -1,0 +1,27 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSync.Client", "Client\ServerSync.Client.csproj", "{E5BA4348-C22E-431F-B294-25A9EEA186C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSync.Server", "Server\ServerSync.Server.csproj", "{BD5CC10F-1895-4675-81B2-62518A628CA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5BA4348-C22E-431F-B294-25A9EEA186C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BA4348-C22E-431F-B294-25A9EEA186C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BA4348-C22E-431F-B294-25A9EEA186C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BA4348-C22E-431F-B294-25A9EEA186C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5CC10F-1895-4675-81B2-62518A628CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5CC10F-1895-4675-81B2-62518A628CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5CC10F-1895-4675-81B2-62518A628CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5CC10F-1895-4675-81B2-62518A628CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

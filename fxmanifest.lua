@@ -1,31 +1,19 @@
---ServerSync Resource made by Wyste for Fivem--
---Repository: https://github.com/Wyste/ServerSync --
-
-name 'ServerSync'
-description 'Syncronizes Time/Weather/Wind and more.'
-author 'Wyste (https://github.com/Wyste) | (https://discordapp.com/invite/byNc6wA)'
-version 'v1.0'
-url 'https://github.com/Wyste/ServerSync'
-
 fx_version 'cerulean'
 game 'gta5'
 
-client_scripts {
-    'ss_shared_functions.lua',
-    'config/Keybinds.lua',
-    'config/ServerSync.lua',
-    'ss_cli_indicators.lua',
-    'ss_cli_windows.lua',
-    'ss_cli_traffic_crowd.lua',
-    'ss_cli_weather.lua',
-    'ss_cli_time.lua'
+files {
+	'Client/*.dll'
 }
 
-server_scripts {
-    'ss_shared_functions.lua',
-    'config/ServerSync.lua',
-    'ss_srv_indicators.lua',
-    'ss_srv_windows.lua',
-    'ss_srv_weather.lua',
-    'ss_srv_time.lua'
+client_scripts {
+	'Client/*.net.dll'
 }
+server_scripts {
+	'Server/bin/Release/**/publish/*.net.dll'
+}
+
+name 'ServerSync'
+author 'Wyste (original) & BBrown (Dotnet Port)'
+version '1.0.0'
+description 'Synchronizes Time/Weather/Wind and more.'
+url 'https://github.com/BBrown4/ServerSync'
